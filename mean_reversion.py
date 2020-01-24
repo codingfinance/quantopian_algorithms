@@ -4,8 +4,8 @@ The algorithm's thesis is that top performing stocks from last week will do poor
 
 Rules.
 1. Every Monday rank all the stocks in our Universe, based on previous 5 day returns
-2. Enter long position on the worst performers those in the bottom 10%
-3. Enter short positions on the best performers those in the top 10%
+2. Enter long position on the worst performers - those in the bottom 10%
+3. Enter short positions on the best performers - those in the top 10%
 4. No leverage
 5. Max position per stock 0.1%
 6. Portfolio positions will be optimized using the Quantopian optimizer
