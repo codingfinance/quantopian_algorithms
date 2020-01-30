@@ -1,12 +1,19 @@
 """
 This algorithm
+- Buys stocks when the closing price is above the 200 Day Moving Average
+- Sells stocks and goes flat when the closing price is below the 200 Day Moving Average
+- Daily rebalancing
+- Equal weights
+- No Shorting
 
-
-- Buys stocks when close price is above 200 Day Moving Average
-- Sells stocks when close price is below 200 Day Moving Average
-- No shorting
-
+To run this algorithm, copy and paste this in Quantopian's Algorithm api at www.quantopian.com/algorithm
 """
+
+# To avoid orders not getting filled set FixedSlippage to 0 
+# You can uncomment the below line of code
+
+# set_slippage(slippage.FixedSlippage(spread=0))
+
 
 # import algorithm libraries
 from quantopian.algorithm import attach_pipeline, pipeline_output
@@ -25,7 +32,7 @@ def initialize(context):
     schedule_function(
     
         rebalance,
-        date_rules.week_start(),
+        date_rules.every_day(),
         time_rules.market_open()
     )
     
@@ -45,15 +52,12 @@ def make_pipeline():
     close = USEquityPricing.close.latest
     
     longs = close > dma_200
-    
-    shorts = close < dma_200
-    
-    securities_to_trade = (longs | shorts)
+      
+    securities_to_trade = (longs)
     
     return Pipeline(
         columns={
-            'longs': longs,
-            'shorts': shorts
+            'longs': longs
         },
         screen=(securities_to_trade),
     )
