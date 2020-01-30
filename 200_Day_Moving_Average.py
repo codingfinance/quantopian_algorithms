@@ -1,7 +1,10 @@
 """
 This algorithm
-- Buys stocks when 50 Day Moving Average Crosses over the 200 Day Moving Average
-- Sells stocks when 200 Day Moving Average Crosses below the 50 Day Moving Average
+
+
+- Buys stocks when close price is above 200 Day Moving Average
+- Sells stocks when close price is below 200 Day Moving Average
+- No shorting
 
 """
 
