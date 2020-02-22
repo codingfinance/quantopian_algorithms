@@ -3,9 +3,10 @@ This is a toy algorithm recipe. Not to be actually used in trading.
 
 For this recipe, we consider a basic strategy based on the SMA. 
 The key points of the strategy are as follows: 
-When the close price becomes higher than the 50-day SMA, buy one share.
-When the close price becomes lower than the 50-day SMA and we have a share, sell it.
-We can only have a maximum of one share at any given time.
+When the close price becomes higher than the 50-day SMA, invest 100% in the stock.
+When the close price becomes lower than the 50-day SMA and we have the stock, sell it and go 0%.
+We can only have a maximum of 100% invested at any given time. 
+No Leverage.
 No short selling is allowed.
 
 We will only Trade one stock Netflix (Netflix)
