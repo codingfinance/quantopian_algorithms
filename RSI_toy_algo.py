@@ -47,3 +47,20 @@ def rebalance(context, data):
     all_positions = context.portfolio.positions
         
     log.info(all_positions)
+
+    """
+
+Returns
+302.99%
+Alpha
+0.03
+Beta
+0.68
+Sharpe
+0.67
+Drawdown
+-31.09%
+
+289% - Algo
+310% - SPY
+"""
